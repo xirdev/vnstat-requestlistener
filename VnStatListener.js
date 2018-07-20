@@ -7,7 +7,7 @@ import jsonBody from 'body/json';
 
 const DEFAULT_PATH_PREFIX = '/vnstat';
 
-export default class MetricsListener {
+export default class VnStatListener {
 
   constructor(apiPath) {
 
