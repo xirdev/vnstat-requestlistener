@@ -1,0 +1,23 @@
+{
+  "name": "vnstat-requestlistener",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "module": "main.js",
+  "author": "Nicholas Schell <nschell@gmail.com>",
+  "license": "ISC",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "body": "^5.1.0",
+    "esm": "^3.0.71",
+    "lodash-es": "^4.17.10",
+    "moment": "^2.22.2",
+    "validate.js": "^0.12.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.1.0",
+    "eslint-config-node-style-guide": "^3.0.0"
+  }
+}
