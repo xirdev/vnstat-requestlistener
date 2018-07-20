@@ -29,6 +29,14 @@ export default class VnStatListener {
 
       let urlObj = urlParse(req.url);
 
+      if (urlObj.pathname !== this.apiPath && !urlObj.pathname.startsWith(`${this.apiPath}/`)) {
+        // we won't be handling this request at all
+        return;
+      }
+
+      // claim ownership of request ASAP, downstream requestListeners will know to ignore
+      req.requestHandled = true;
+
       let validationConstraints;
       let momentUnitOfTime;
       let momentFormatStr;
@@ -83,6 +91,10 @@ export default class VnStatListener {
 
           break;
         default:
+
+          // because we are taking full responsibility of handling request, we will return 404
+          res.statusCode = 404;
+          res.end();
           break;
       }
 
