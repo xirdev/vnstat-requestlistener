@@ -29,7 +29,7 @@ export default class VnStatListener {
 
       let urlObj = urlParse(req.url);
 
-      if (urlObj.pathname !== this.apiPath && !urlObj.pathname.startsWith(`${this.apiPath}/`)) {
+      if (req.requestHandled === true || (urlObj.pathname !== this.apiPath && !urlObj.pathname.startsWith(`${this.apiPath}/`))) {
         // we won't be handling this request at all
         return;
       }
